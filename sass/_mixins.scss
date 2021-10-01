@@ -1,0 +1,116 @@
+@mixin centerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin absoluteObject {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+@mixin grid($numOfCol) {
+    display: grid;
+    grid-template-columns: $numOfCol;
+    place-content: center;
+}
+
+@mixin fixedObject($top) {
+    position: fixed;
+    top: $top;
+}
+
+@mixin bgImg($img) {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), $img no-repeat center/cover;
+}
+
+//Animations
+
+// Back to Top hover animation
+// @mixin bckTopHover{
+    // animation: bckTop 1s linear infinite;
+
+    @keyframes bckTop{
+        0%{
+            opacity: 1;
+            bottom: -15px;
+            background: none;
+            color: #fff;
+        }
+        
+        100%{
+            opacity: 0.3;
+            bottom: 12px;
+            background: none;
+            color: #fff;
+        }
+    }
+// }
+
+@mixin chatBounce {
+    animation: levitate 1.5s linear infinite alternate;
+
+    @keyframes levitate {
+        0%{
+            margin-bottom: 0;
+        }
+        100%{
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@mixin chatShadow {
+    animation: chatShadow 1.5s linear infinite alternate;
+
+    @keyframes chatShadow {
+        0%{
+            width: 1.5rem;
+        }
+        100%{
+            width: 1.2rem;
+        }
+    }
+}
+
+
+// Media Queries
+@mixin responsive($breakPoint) {
+    @if($breakPoint == phone){
+        @media screen and (min-width: 321px) {
+            @content;
+        }
+    }
+
+    @if($breakPoint == lgPhone){
+        @media screen and (min-width: 500px) {
+            @content;
+        }
+    }
+
+    @if($breakPoint == chatBreak){
+        @media screen and (min-width: 673px) {
+            @content;
+        }
+    }
+
+    @if($breakPoint == largePhone){
+            @media screen and (min-width: 736px) {
+                @content;
+            }
+        }
+
+    @if($breakPoint == tabletOrBigger){
+        @media screen and (min-width: 834px) {
+            @content;
+        };
+    };
+
+    @if($breakPoint == lgTablet){
+        @media screen and (min-width: 980px) {
+            @content;
+        };
+    };
+
+    
+}

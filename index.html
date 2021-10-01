@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=class="viewRates""viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texell Redesign</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Header // Logo align left at 506px -->
+    <header class="header"> 
+        <!-- <i class="fas fa-user"></i> -->
+        <i class="fas fa-caret-left"></i>
+        <nav class="nav">
+
+            <ul id="navUl" class="navUl">
+                <li class="navLink">
+                    <p>Accounts</p> <i class="fas fa-plus" id="accounts"></i>
+                </li>
+                <div class="account subMenu">
+                    <li><a href="#">Open an Account</a></li>
+                    <li><a href="#">Checking</a></li>
+                    <li><a href="#">Saving</a></li>
+                    <li><a href="#">Dollar Squad Kids Club</a></li>
+                </div>
+                <li class="navLink">
+                    <p>Loans</p> <i class="fas fa-plus" id="loans"></i>
+                </li>
+                <div class="loans subMenu">
+                    <li><a href="#">Get Approved</a></li>
+                    <li><a href="#">Vehicle Loans</a></li>
+                    <li><a href="#">Personal and Secured Loans</a></li>
+                    <li><a href="#">Business Loans</a></li>
+                    <li><a href="#">Loan Payment Protection</a></li>
+                </div>
+                <li class="navLink">
+                    <p>Services</p> <i class="fas fa-plus" id="services"></i>
+                </li>
+                <div class="services subMenu">
+                    <li><a href="#">Mobile Banking</a></li>
+                    <li><a href="#">e-Branch Home Banking</a></li>
+                    <li><a href="#">Wire Transfers</a></li>
+                </div>
+                <li class="navLink">
+                    <p>About Us</p> <i class="fas fa-plus" id="about"></i>
+                </li>
+                <div id="aboutUsDrop" class="aboutUs subMenu">
+                    <li><a href="#">Memberships</a></li>
+                    <li><a href="#">News and Publications</a></li>
+                    <li><a href="#">Holidays</a></li>
+                    <li><a href="#">Events</a></li>
+                </div>
+            </ul>
+            <div class="infoLinks">
+                <a href="#">Find Us</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+        <div class="headerContent">
+            <img src="/img/texell logo.png" alt="" id="top">
+            <div class="portal">
+                <input type="text" id="search" placeholder="Search...">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="locations ">
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 254-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 855-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 254-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 254-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 254-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 254-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 855-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 855-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                    <div class="location">
+                        <h4>Texell Credit Union</h4>
+                        <p>,TX, United States • +1 254-773-1604</p>
+                        <p><span class="open"></span><span class="openWhen"></span></p>
+                    </div>
+                </div>
+        </div>
+    </header>
+    <!-- Banner -->
+    <section id="banner" class="chatOpen">
+        <div id="slides" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators carousel-indicators-start">
+                <button type="button" data-bs-target="#slides" data-bs-slide-to="0" class="active"
+                    aria-current="true"></button>
+                <button type="button" data-bs-target="#slides" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#slides" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#slides" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active refi" data-bs-interval="7000">
+                    
+                    <div class="blkBlur"></div>
+                    <h3>Refinace Today!</h3>
+                    <p>
+                        Loan rates as low as <span class="brandColor"><br>2.25%</span> APR.</p>
+                    <a href="#" class="btn2">Get Approved</a>
+                    <a href="#" class="learnMore">Learn More</a>
+                </div>
+                <div class="carousel-item contest" data-bs-interval="7000">
+                    
+                    <div class="blkBlur"></div>
+                    <h3>Coloring Contest</h3>
+                    <p>Open to all <span class="brandColor">Dollar Squad Members!</span></p>
+                    <a href="#" class="btn2">Enter Contest</a>
+                    <a href="#" class="learnMore">Learn More</a>
+                </div>
+                <div class="carousel-item borrow" data-bs-interval="7000">
+                    
+                    <div class="blkBlur"></div>
+                    <h3>Borrow $5,000</h3>
+                    <p>for only <span class="brandColor">$98</span> per month</p>
+                    <a href="#" class="btn2">Get Approved</a>
+                    <a href="#" class="learnMore">Learn More</a>
+                </div>
+                <div class="carousel-item teachers" data-bs-interval="7000">
+                    
+                    <div class="blkBlur"></div>
+                    <h3>Teacher Loans</h3>
+                    <p><span class="brandColor">$1,500</span> guarenteed to Teachers.</p>
+                    <a href="#" class="btn2">Open account</a>
+                    <a href="#" class="learnMore">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Monetary Endeavors -->
+    <section id="endeavors">
+        <div id="opts1" class="carousel slide" data-bs-ride="carousel">
+            <div id="loanSlider" class="carousel-inner loansRow">
+            </div>
+        </div>
+        <div id="opts2" class="options">
+            <div>
+                <i class="fas fa-hand-holding-usd"></i><br>
+                <a href="#" class="optsHeading">Loans</a>
+                <p>Need a loan? You've come to the right place! We offer the lowest rates on auto, personal loans and so
+                    much more.</p>
+                <a href="#">Get Approved</a>
+            </div>
+            <div>
+                <i class="fas fa-id-card"></i><br>
+                <a href="#" class="optsHeading">Accounts</a>
+                <p>No matter what your need, we've got checking, savings and investment accounts that make life simple.
+                </p>
+                <a href="#">Open Now</a>
+            </div>
+            <div>
+                <i class="fas fa-home"></i><br>
+                <a href="#" class="optsHeading">Mortgages</a>
+                <p>Make yourself at home with a mortgage from a local lender. We’ll provide a variety of options for a
+                    new home purchase or refinance.</p>
+                <a href="#">Get Started</a>
+            </div>
+            <div>
+                <i class="fas fa-shield-alt"></i><br>
+                <a href="#" class="optsHeading">Insurance</a>
+                <p>We’ll help you create security, and know the importance of having the protection you need, when you
+                    need it.</p>
+                <a href="#">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+    <!-- Prefooter -->
+    <section id="prefooter">
+        <div class="preContent">
+            <div>
+                Download our Mobile App Today! <i class="fab fa-apple"></i><i class="fab fa-android"></i>
+            </div>
+            <div>
+                <a href="#">Pay Loan with Deby Card</a>
+                <a href="#">Careers</a>
+                <a href="#">Calculators</a>
+                <a href="#">Resources</a>
+            </div>
+        </div>
+        <a href="#top" id="bck2Top">
+            <i class="fas fa-angle-up" id="toTop"></i>
+        </a>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footerContent">
+            <div class="legalness">
+                <div class="customerAid">
+                    <a href="#">Disclosures and Complaints</a>
+                    <p>Routing Number 311989250</p>
+                    <p>NMLS #460152</p>
+                </div>
+                <div class="trademark">
+                    <p>© 2021 Texell Credit Union. Insured by NCUA.</p>
+                    <p>APR = Annual Percentage Rate & APY = Annual Percentage Yield</p>
+                </div>
+                <div class="bestUnion">
+                    <img src="https://www.southlandcu.org/getmedia/64a2e15d-e498-4d3b-923c-a77db16a7fe0/CUJ2020.png?editmode=1&instance=d84f759f-9eed-442a-9b4b-fc37022eaa5d"
+                        alt="">
+                </div>
+            </div>
+            <div class="socials">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+    <!-- Chat Now Icon -->
+    <div class="chat" id="chat">
+        <i class="far fa-comments"></i>
+        <div class="shadow"></div>
+    </div>
+    <!-- Chat Bot -->
+    <div id="chatBot" class="chatBot">
+        <header class="chatHeader">
+            <i class="fas fa-times" id="close"></i>
+            <i class="fas fa-minus" id="minimize"></i>
+        </header>
+        <div id="username">
+            <div class="endChat enterName">
+                <h2><span>Texell</span><br> Virtual Assitant</h2>
+            <input type="text" name="user" id="user" placeholder="Username">
+            <p class="specs">At least 4 characters</p>
+            <button class="guest" id="guest">Continue as Guest</button>
+            </div>
+        </div>
+        <div class="closeChat">
+            <div class="endChat">
+            <p>Are you sure you want to end the chat session?</p>
+            <button class="end">End Chat</button>
+            <button class="cancel">Cancel</button>
+            </div>
+        </div>
+        <div class="chatContent" id="chatContent">
+            
+        </div>
+        <div class="messages" id="messages">
+        </div>
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+            <textarea name="message" id="userInput" rows="1" placeholder="Type your message here"></textarea>
+        <i class="fas fa-arrow-up"></i>
+        <footer class="chatFooter">
+        </footer>
+        
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

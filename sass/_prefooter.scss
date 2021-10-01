@@ -1,0 +1,65 @@
+// 1 col Grid mobile to 2 col Grid small Tablet or bigger
+// Back to top arrow position absolute with neg bottom value
+#prefooter{
+    @include centerFlex;
+    position: relative;
+    width: 100%;
+    background: $brandColor;
+    padding: 0 2rem;
+
+    .preContent{
+        @include grid(1fr);
+        width: 100%;
+        max-width: 750px;
+        padding: 1rem 0 2rem;
+        font-weight: 500;
+
+        >div{
+            width: 100%;
+            text-align: center;
+            color: #eee;
+
+            &:first-child{
+                font-size: 1.2rem;
+                word-spacing: 0.2rem;
+
+                i{
+                    font-size: 1.7rem;
+                    padding: 0 0.2rem;
+                }
+            }
+
+            &:last-child{
+                padding: 0 5.8rem;
+
+                a{
+                    color: #eee;
+                    padding: 0 0.4rem;
+                    text-decoration: none;
+                    font-weight: 100;
+                    font-size: 0.9rem;
+
+                    &:nth-child(n+2):nth-child(-n+3){
+                        border-right: 1px solid #eee;
+                    }
+                }
+            }
+        }
+    }
+
+    #bck2Top{
+        @include absoluteObject;
+        left: 50%;
+        bottom: -1.5rem;
+
+        .fa-angle-up{
+            position: relative;
+            border-radius: 5px;
+            padding: 0.2rem 1rem;
+            background: #fff;
+            color: $brandColor;
+            font-size: 1.1rem;
+            z-index: 5;
+        }        
+    }
+}

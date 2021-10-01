@@ -1,0 +1,325 @@
+.header{
+    @include centerFlex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 20px solid $brandColor;
+
+    i{
+        color: $brandColor;
+    }
+// Mobile Nav
+    .fa-caret-left{
+        @include fixedObject(3rem);
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        border-radius: 5px 0 0 5px;
+        transition: all .4s;
+        background: #fff;
+        font-size: 1.5rem;
+        padding: 0.3rem;
+        cursor: pointer;
+        z-index: 10;
+        right: 0;
+        
+
+        &.clicked{
+            right: calc(100% - 18px);
+            transform: rotate(180deg);
+            background: #eee;
+            box-shadow: 0 0 5px rgba(0,0,0,0.7);
+            top: 1rem;
+        }
+    }
+
+    .fa-user-circle{
+        @include fixedObject(1.7rem);
+        left: 8%;
+        font-size: 1.3rem;
+    }
+
+    .nav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        transform-origin: right;
+        transform: scale(0, 1);
+        transition: all .4s;
+        overflow-y: scroll;
+        padding: 3rem 0 0 0;
+        background: $brandColor;
+        text-align: center;
+        z-index: 8;
+
+        
+
+        ul{
+            width: 100%;
+            text-align: left;
+            margin: 1rem 0 0 0;
+            padding-right: 1rem;
+
+            >li{
+                @include grid(repeat(2,1fr));
+                list-style: none;
+                font-size: 1.3rem;
+                color: #fff;
+                font-weight: 500;
+                margin: 1rem 0;
+                border-radius: 3px;
+                width: 100%;
+
+                &:hover,
+                &.clicked{
+                    background: rgba(0,0,0,0.2);
+                }
+
+                p{
+                    @include centerFlex;
+                    justify-content: flex-start;
+                    height: 100%;
+                    padding-left: 1rem;
+                }
+
+                .fa-plus{
+                    color: #fff;
+                    justify-self: end;
+                    align-self: center;
+                    padding: 0.2rem 1.3rem;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    transition: all .2s;
+
+                    &.clicked{
+                        transform: rotate(-45deg);
+                        font-size: 1.2rem;
+                    }
+
+                    
+                }
+            }
+
+            >div{
+                display: none;
+                transform-origin: left;
+                
+                border-radius: 3px;
+
+                &.dropDown{
+                    display: block;
+                }
+
+                li{
+                    width: 100%;
+                    list-style: none;
+                    padding: 0 0.5rem;
+                    background: #71bda87e;
+                    
+                    &:hover{
+                        background: #ddd;
+                        color: $brandColor;
+                    }
+
+                    &:first-child{
+                        border-radius: 3px 3px 0 0;
+                    }
+                    &:last-child{
+                        border-radius: 0 0 3px 3px;
+                    }
+
+                    a{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        color: #fff;
+                        padding: 0.5rem 0;
+                        font-size: 0.9rem;
+
+                        &:hover{
+                            color: $brandColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .infoLinks{
+            @include centerFlex;
+            align-items: flex-end;
+            width: 100%;
+            padding: 1rem 0;
+
+            a{
+                color: #ddd;
+                margin: 0 0.5rem;
+            }
+        }
+
+        &.active{
+            transform: scale(1,1);
+        }
+    }
+
+//All Header Content except the Nav
+    .headerContent{
+        @include grid(repeat(2,1fr));
+        
+        img{
+            width: 9.5rem;
+            grid-column: 1/3;
+            justify-self: center;
+        }
+
+        .portal{
+            @include centerFlex;
+            position: relative;
+            width: 100%;
+            height: 58px;
+            grid-column: 1/3;
+            padding: 0.75rem 0;
+            text-align: center;
+            font-size: 1.5rem;
+
+            i{
+                font-size: 1.2rem;
+                margin: 0.2rem;
+                padding: 0.2rem;
+            }
+
+            input{
+                width: 80%;
+                margin: 0;
+                padding: 0;
+                border: 1px solid $brandColor;
+                border-radius: 5px;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+
+        .locations{
+            @include absoluteObject;
+            top: 60%;
+            left: 50%;
+            width: 100%;
+            max-width: 504px;
+            height: 79vh;
+            padding: 1rem 0.5rem;
+            border-radius: 10px 10px 0 0;
+            background: linear-gradient(#27463e, #2b5046, #2b5046);
+            overflow-y: scroll;
+            z-index: 10;
+            display: none;
+
+            .location{
+                width: 100%;
+                height: auto;
+                text-align: center;
+                border-radius: 8px;
+                padding: 0.2rem 0;
+                margin: 0.5rem 0;
+                color: #ddd;
+                background: rgba(131, 131, 131, 0.5);
+            }
+        }
+    }
+}
+
+@include responsive(lgTablet){
+    .header{
+        border-bottom: none; 
+    
+        .fa-caret-left{
+            display: none;
+        }
+
+        .nav{
+            @include absoluteObject;
+            @include centerFlex;
+            top: 9.5rem;
+            transform: scale(1);
+            width: 100%;
+            height: 35px;
+            padding: 0;
+            overflow-y: visible;
+
+            ul{
+                @include grid(repeat(4,1fr));
+                row-gap: 0.2rem;
+                margin: 0;
+                width: 80%;
+
+                >li{
+                    &:hover{
+                        cursor: pointer;
+                    }
+
+                }
+
+                >div{
+                    background: none;
+                    border-radius: 5px;
+                    grid-row: 2/3;
+                    height: 100%;
+
+                    li{
+                        background: #555;
+                        &:hover{
+                            position: relative;
+                            background: rgba(50, 50, 50, 0.95);
+                        }
+
+                        a{
+                            &:hover{
+                                color: #fff;
+                            }
+                        }                        
+                    }
+                }
+                .account{
+                    grid-column: 1/2;
+                }
+                .loans{
+                    grid-column: 2/3;
+                }
+                .services{
+                    grid-column: 3/4;
+                }
+                .aboutUs{
+                    grid-column: 4/5;
+                }
+                >li{
+                    display: flex;
+                    width: auto;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0.5rem 0;
+                    line-height: 3px;
+
+                    p{
+                        padding: 0 0.5rem;
+                    }
+
+                    .fa-plus{
+                        display: none;
+                    }
+
+                    a{
+                        padding: 0;
+                    }
+                }
+            }
+
+            .infoLinks{
+                a{
+                  color: transparent;
+                pointer-events: none;  
+                }
+                
+            }
+        }
+    }
+}

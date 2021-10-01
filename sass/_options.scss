@@ -1,0 +1,98 @@
+#endeavors{
+    @include centerFlex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
+    padding: 0 1.5rem 3rem;
+    
+    #opts1{
+        width: 100vw;
+        margin-bottom: 3rem;
+        background: #666666;
+    
+        #loanSlider{
+            
+    
+            .carousel-item, .optns2{
+                text-align: center;
+                padding: 1rem 0;
+
+                a{
+                    color: #32cdae;
+                    text-decoration: none;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+
+                p{
+                    font-size: 0.8rem;
+                    color: #fff;
+                    margin-bottom: 0;
+
+                    .perc{
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }    
+    
+    .optsHeading{
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: $brandColor;
+        }
+
+    .options{
+        @include grid(repeat(auto-fit, minmax(235px, 1fr)));
+        column-gap: 0.5rem;
+        row-gap: 2.5rem;
+
+        >div{
+            text-align: center;
+
+            i{
+                font-size: 1.5rem;
+                border: 2px solid $optionLinks;
+                border-radius: 50%;
+                padding: 12px;
+            }
+
+            p{
+                padding: 0 3rem;
+                margin-bottom: 0;
+            }
+
+            a{
+                color: $optionLinks;
+
+                &:last-child{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    @include responsive(tabletOrBigger){
+        #opts1{
+            padding: 1.5rem;
+        
+            #loanSlider{
+                @include centerFlex;
+
+                .optns2{
+                    
+                    &:nth-child(even){
+                        border-left: 1px solid $brandColor;
+                        border-right: 1px solid $brandColor;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}

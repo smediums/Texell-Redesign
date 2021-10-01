@@ -1,0 +1,166 @@
+#banner{
+    width: 100%;
+    
+    .carousel{
+        width: 100%;
+
+        .carousel-indicators{
+            @include centerFlex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0 1rem;
+            visibility: hidden;
+
+            button{
+                margin: 0 0.3rem;
+                padding: 0;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+            }
+        }
+
+        @include responsive(largePhone){
+            .carousel-indicators{
+                visibility: visible;
+            }
+        }
+
+        .carousel-inner{
+
+            .carousel-item{
+                width: 100%;
+                height: 40vh;
+                max-height: 700px;
+                text-align: center;
+                color: #fff;
+                
+                &:first-child{
+                    @include bgImg(url(/img/couple.jpg));
+                }
+                &:nth-child(2){
+                    @include bgImg(url(/img/coloring.jpg));
+                }
+                &:nth-child(3){
+                    @include bgImg(url(/img/borrow.jpg));
+                }
+                &:last-child{
+                    @include bgImg(url(/img/teacher.jpg));
+                }
+                
+
+                h3{
+                    padding-top: 2rem;
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+
+                p{
+                    font-size: 1.2rem;
+
+                    .brandColor{
+                        color: #2fd1b1;
+                    }
+                }
+
+                .learnMore, .btn2{
+                    @include absoluteObject;
+                    bottom: -0.8rem;
+                    left: 50%;
+                    color: #ddd;
+                    font-size: 14px;
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+                    z-index: 3;
+                    cursor: pointer;
+                }
+
+
+                .btn2{
+                    background: $brandColor;
+                    border-radius: 3px;
+                    bottom: 1.5rem;
+                    color: #fff;
+                    margin-bottom: 0.2rem;
+                    
+
+                    &:hover{
+                        background: $brandColorHover;
+                    }
+                }
+
+                .learnMore{
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            @include responsive(phone){
+                .carousel-item{
+                    height: 55vw;
+                }
+            }
+            @include responsive(lgPhone){
+                .carousel-item{
+                    h3{
+                        padding-top: 12.5%;
+                    }
+
+                    .btn2{
+                        bottom: 25%;
+                    }
+                    .learnMore{
+                        bottom: 15%;
+                    }
+                }
+            }
+            @include responsive(largePhone){
+                .carousel-item{
+                    position: relative;
+                    text-align: left;
+                    
+                    .blkBlur{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(to right, #000, transparent);
+                    }
+
+                    h3,
+                    p{
+                        
+                        position: absolute;
+                        width: 40%;
+                        text-align: center;
+                    }
+                    p{
+                        padding-top: 18%;
+                    }
+
+                    .btn2,
+                    .learnMore{
+                        left: 20%;
+                    }
+
+                    &:first-child{
+                        background: url(/img/couple.jpg) no-repeat center/cover;
+                        
+                    }
+                    &:nth-child(2){
+                        background: url(/img/coloring.jpg) no-repeat center/cover;
+                    }
+                    &:nth-child(3){
+                        background: url(/img/borrow.jpg) no-repeat center/cover;
+                    }
+                    &:last-child{
+                        background: url(/img/teacher.jpg) no-repeat center/cover;
+                    }
+                }
+            }
+        } 
+    }
+}

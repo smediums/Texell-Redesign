@@ -1,0 +1,74 @@
+//Establish max-width for all section except Banner
+//Resets
+//Body styles
+//General styles
+
+@import "./sass/variables";
+@import "./sass/mixins";
+@import "./sass/header";
+@import "./sass/banner";
+@import "./sass/options";
+@import "./sass/prefooter";
+@import "./sass/footer";
+@import "./sass/chatBot";
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+
+    .headerContent{
+        width: 100%;
+        max-width: 800px;
+        padding: 1rem;
+    }
+
+//Chat Now Icon
+    .chat{
+        @include centerFlex;
+        flex-direction: column;
+        position: fixed;
+        cursor: pointer;
+        bottom: 1.3rem;
+        left: 1rem;
+        z-index: 12;
+        
+
+        i{
+            @include chatBounce;
+            font-size: 1.8rem;
+            padding: 0.5rem;
+            color: $brandColor;
+            border-radius: 50%;
+        }
+
+        .shadow{
+            @include chatShadow;
+            background: #222;
+            width: 1.5rem;
+            height: 0.3rem;
+            border-radius: 50%;
+            filter: blur(3px);
+        }
+
+        &.chatOpen,
+        &.minimize{
+            display: none;
+        }
+
+        
+    }
+
+    &.notActive{
+        height: 100vh;
+        overflow: hidden;
+    }
+
+}
