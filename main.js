@@ -168,21 +168,27 @@ const chatBotOpen = () => {
         chatBot.classList.toggle('minimize');
     });
 
+    //Initial bot message
+    const initialMessage = (usersName) => {
+        userNameScrn.classList.add('enterChat');
+        convoArea.innerHTML += `<div class="botResponse"><p class="reponse">Hello <span class="user">${usersName}</span>,<br> I am Clark, Texell's virtual Assistant. Please, type one of the following, so I can assist you better.</p>${curTime}</div>`;
+        convoArea.lastElementChild.scrollIntoView(false);
+    }
 
     //The users name
     let user = document.getElementById('user');
+
+    //Validate username and open chat log
     user.addEventListener('keydown', (event) => {
        const userName = user.value;
 
+       //Validate username
        const userValidation = () => {
             let notUsable1 = /nigger/i.test(userName);
 
+            //if valid username
            if(userName.length >= 4 && notUsable1 == false){
-
-            userNameScrn.classList.add('enterChat');
-            convoArea.innerHTML += `<div class="botResponse"><p class="reponse">Hello <span class="user">${userName}</span>,<br><br> This is Clark, Texell's virtual Assistant. How can I help you today?</p>${curTime}</div>`;
-            convoArea.lastElementChild.scrollIntoView(false);
-            
+                initialMessage(userName)
            } else {
                document.querySelector('.specs').innerHTML = 'Not enough characters(at least 4),<br> or username is not allowed.';
                document.querySelector('.specs').style.textAlign = 'center';
@@ -191,18 +197,14 @@ const chatBotOpen = () => {
                document.querySelector('.specs').style.fontSize = '0.9rem';
             }
         }
-
         if(event.key === 'Enter'){
             userValidation();
-         
         };
     });
     
-    //Proceed as Guest
+    //Proceed as Guest and open chat log
     guest.addEventListener('click', () => {
-        userNameScrn.classList.add('enterChat');
-        convoArea.innerHTML += `<div class="botResponse"><p class="reponse">Hello <span class="user">Guest</span>,<br><br> This is Clark, Texell's virtual Assistant. How can I help you today?</p>${curTime}</div>`;
-        convoArea.lastElementChild.scrollIntoView(false);
+        initialMessage('Guest')
     });
 };
 chatBotOpen();
@@ -214,26 +216,25 @@ const chatBotResponses = () => {
     //Varibales
     let userInput = document.getElementById('userInput').value;
     document.getElementById('userInput').value = '';
-
+    let userName = document.getElementById('user').value;
 
     // Regex to trigger Bot Response
-
     let greeting1 = /ello/i.test(userInput);
     let greeting2 = /hey/i.test(userInput);
     let greeting3 = /hi/i.test(userInput);
     let loans = /loans/i.test(userInput);
     let loan = /loan/i.test(userInput);
-    let weather = /weather/i.test(userInput);;
-    let food = /food/i.test(userInput);
-    let restaurant = /restaurant/i.test(userInput);
-    let help = /help/i.test(userInput);
-    let todayDate = /date/i.test(userInput);
 
-convoArea.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
+    //If contiue as guest
+    if(userName == ''){
+        userName = 'Customer'
+    }
+
+    convoArea.innerHTML += `<div class="userText"><i class="fas fa-user-circle"></i><p>${userInput}</p>${curTime}</div>`;
 
     if(greeting1 || greeting2 || greeting3){
         setTimeout(() => {
-            convoArea.innerHTML += `<div class="botResponse"><p class="reponse">Hello Customer, this is Clark, Texell's virtual Assistant. How can I help you today?</p>${curTime}</div>`;
+            convoArea.innerHTML += `<div class="botResponse"><p class="reponse">Hello <span class="user">${userName}</span>, I am Clark, Texell's virtual Assistant. How can I help you today?</p>${curTime}</div>`;
             convoArea.lastElementChild.scrollIntoView(false);
         }, 550);
         convoArea.lastElementChild.scrollIntoView(false);
@@ -264,9 +265,11 @@ let userInput = document.getElementById('userInput');
 userInput.addEventListener('keydown', (event) => {
 
     if(event.key === 'Enter'){
+
         chatBotResponses();
 
         const botTyping = document.createElement('div');
+
         botTyping.className = 'typing';
         botTyping.innerHTML = `<div class="typing"><p><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></p>Typing...</div>`;
         convoArea.appendChild(botTyping);
